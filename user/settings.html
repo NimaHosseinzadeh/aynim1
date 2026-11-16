@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>تنظیمات | Aynim</title>
+  <link rel="icon" href="../assets/images/aynim-high-resolution-logo.png">
+  <link rel="stylesheet" href="../assets/icons/remixicon/remixicon.css">
+  <link rel="stylesheet" href="css/user.css">
+</head>
+<body>
+
+<div class="user">
+  <input type="checkbox" id="user-menu-toggle" class="user__toggle" hidden>
+
+  <aside class="user-sidebar">
+    <div class="user-sidebar__profile">
+      <span class="user-sidebar__avatar">م</span>
+      <div class="user-sidebar__info">
+        <div class="user-sidebar__name">مریم احمدی</div>
+        <div class="user-sidebar__email">maryam@example.com</div>
+      </div>
+    </div>
+    <nav class="user-sidebar__nav">
+      <a href="index.html" class="user-sidebar__link"><i class="ri-dashboard-line"></i><span>داشبورد</span></a>
+      <a href="orders.html" class="user-sidebar__link"><i class="ri-shopping-bag-3-line"></i><span>سفارش‌های من</span></a>
+      <a href="transactions.html" class="user-sidebar__link"><i class="ri-wallet-3-line"></i><span>تراکنش‌ها</span></a>
+      <a href="wishlist.html" class="user-sidebar__link"><i class="ri-heart-line"></i><span>علاقه‌مندی‌ها</span></a>
+      <a href="addresses.html" class="user-sidebar__link"><i class="ri-map-pin-line"></i><span>آدرس‌ها</span></a>
+      <a href="profile.html" class="user-sidebar__link"><i class="ri-user-3-line"></i><span>اطلاعات حساب</span></a>
+      <a href="security.html" class="user-sidebar__link"><i class="ri-shield-keyhole-line"></i><span>امنیت</span></a>
+      <a href="settings.html" class="user-sidebar__link user-sidebar__link--active"><i class="ri-settings-3-line"></i><span>تنظیمات</span></a>
+    </nav>
+    <div class="user-sidebar__footer">
+      <a href="../pages/login.html" class="user-sidebar__logout"><i class="ri-logout-box-r-line"></i><span>خروج از حساب</span></a>
+    </div>
+  </aside>
+
+  <div class="user-main">
+    <header class="user-topbar">
+      <label for="user-menu-toggle" class="user-topbar__toggle" aria-label="منو"><i class="ri-menu-3-line"></i></label>
+      <span class="user-topbar__title">تنظیمات</span>
+      <div class="user-topbar__actions">
+        <a href="../pages/wishlist.html" class="user-topbar__action" title="علاقه‌مندی‌ها"><i class="ri-heart-line"></i></a>
+        <a href="../pages/cart.html" class="user-topbar__action" title="سبد خرید"><i class="ri-shopping-bag-line"></i><span class="user-topbar__count">۲</span></a>
+      </div>
+    </header>
+
+    <main class="user-content">
+      <div class="user-content__inner">
+
+        <nav class="breadcrumb">
+          <ol>
+            <li><a href="index.html">داشبورد</a></li>
+            <li>تنظیمات</li>
+          </ol>
+        </nav>
+
+        <div class="user-head">
+          <div>
+            <h1 class="user-head__title">تنظیمات حساب</h1>
+            <p class="user-head__desc">اعلان‌ها و ترجیحات حساب خود را مدیریت کنید</p>
+          </div>
+        </div>
+
+        <!-- Notifications -->
+        <section class="card" style="margin-bottom:1rem;">
+          <div class="card__head">
+            <h2 class="card__title">اعلان‌ها</h2>
+          </div>
+          <div class="card__body">
+            <form>
+              <div style="display:grid; gap:0.75rem;">
+                <label style="display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:0.75rem; background:#fafafa; border-radius:0.55rem; cursor:pointer;">
+                  <span>
+                    <div style="font-weight:500;">اطلاع‌رسانی سفارش‌ها</div>
+                    <div class="table__cell--muted">پیامک و ایمیل هنگام تغییر وضعیت سفارش</div>
+                  </span>
+                  <input type="checkbox" checked style="accent-color:var(--primary); width:1.1rem; height:1.1rem;">
+                </label>
+                <label style="display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:0.75rem; background:#fafafa; border-radius:0.55rem; cursor:pointer;">
+                  <span>
+                    <div style="font-weight:500;">خبرنامه تخفیف‌ها</div>
+                    <div class="table__cell--muted">دریافت ایمیل تخفیف‌ها و پیشنهادهای ویژه</div>
+                  </span>
+                  <input type="checkbox" style="accent-color:var(--primary); width:1.1rem; height:1.1rem;">
+                </label>
+                <label style="display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:0.75rem; background:#fafafa; border-radius:0.55rem; cursor:pointer;">
+                  <span>
+                    <div style="font-weight:500;">یادآور سبد خرید</div>
+                    <div class="table__cell--muted">یادآوری سبدهای خرید رهاشده</div>
+                  </span>
+                  <input type="checkbox" checked style="accent-color:var(--primary); width:1.1rem; height:1.1rem;">
+                </label>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn--primary"><i class="ri-check-line"></i> ذخیره تنظیمات</button>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- Danger zone -->
+        <section class="card" style="border-color:#fecaca;">
+          <div class="card__head" style="border-bottom-color:#fecaca;">
+            <h2 class="card__title" style="color:#b91c1c;">منطقه خطر</h2>
+          </div>
+          <div class="card__body">
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
+              <div>
+                <div style="font-weight:500;">حذف حساب کاربری</div>
+                <div class="table__cell--muted">این عمل قابل بازگشت نیست و تمام اطلاعات شما حذف می‌شود.</div>
+              </div>
+              <button class="btn btn--danger btn--sm"><i class="ri-delete-bin-line"></i> حذف حساب</button>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <label for="user-menu-toggle" class="user-overlay"></label>
+</div>
+
+</body>
+</html>
