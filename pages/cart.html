@@ -11,8 +11,10 @@
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/inner.css">
     <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/animations.css">
 </head>
 <body>
+  <div class="page-loader" aria-hidden="true"><span class="page-loader__mark">AYNIM</span><span class="page-loader__spinner"></span></div>
 
   <!-- Header -->
   <header class="header">
@@ -29,7 +31,7 @@
           <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.800-8 11-8 11z"/></svg>
         </a>
         <a href="login.html" class="btn btn--primary btn--sm"><img src="../assets/icons/account.svg" alt="">ورود / ثبت نام</a>
-        <a href="cart.html" class="cart" aria-label="سبد خرید"><img src="../assets/icons/shopping-bag.svg" alt=""><span class="cart__count">۱</span></a>
+        <a href="cart.html" class="cart" aria-label="سبد خرید"><img src="../assets/icons/shopping-bag.svg" alt=""><span class="cart__count">۰</span></a>
       </div>
     </div>
 
@@ -56,71 +58,32 @@
 
     <div class="page-head">
       <h1 class="page-head__title">سبد خرید</h1>
-      <p class="page-head__count">۳ کالا در سبد شما</p>
+      <p class="page-head__count" data-cart-count>۰ کالا در سبد شما</p>
     </div>
 
-    <div class="cart-page">
+    <div class="cart-page" data-cart-page>
+      <ul class="items" data-cart-items aria-live="polite"></ul>
 
-      <ul class="items">
-        <li class="item">
-          <a href="product/011.html" class="item__img"><img src="../assets/images/011.jpg" alt=""></a>
-          <div class="item__info">
-            <h3 class="item__title"><a href="product/011.html">ست تیشرت و شلوارک مردانه هایکا مدل ۰۸۴۶</a></h3>
-            <p class="item__opts">رنگ: مشکی | سایز: L</p>
-            <p class="item__price">
-              <del>۱,۱۵۰,۰۰۰</del>
-              <span>۹۲۷,۰۰۰ تومان</span>
-            </p>
-          </div>
-          <input class="item__qty" type="number" value="1" min="1" max="10" aria-label="تعداد">
-          <p class="item__total">۹۲۷,۰۰۰ تومان</p>
-          <button class="item__remove" aria-label="حذف از سبد"><i class="ri-delete-bin-line"></i></button>
-        </li>
-        <li class="item">
-          <a href="product/013.html" class="item__img"><img src="../assets/images/013.jpg" alt=""></a>
-          <div class="item__info">
-            <h3 class="item__title"><a href="product/013.html">شمیز زنانه درسا مدل ۰۸۵۱</a></h3>
-            <p class="item__opts">رنگ: کرم | سایز: M</p>
-            <p class="item__price">
-              <del>۷۲۰,۰۰۰</del>
-              <span>۵۹۷,۰۰۰ تومان</span>
-            </p>
-          </div>
-          <input class="item__qty" type="number" value="2" min="1" max="10" aria-label="تعداد">
-          <p class="item__total">۱,۱۹۴,۰۰۰ تومان</p>
-          <button class="item__remove" aria-label="حذف از سبد"><i class="ri-delete-bin-line"></i></button>
-        </li>
-        <li class="item">
-          <a href="product/018.html" class="item__img"><img src="../assets/images/018.jpg" alt=""></a>
-          <div class="item__info">
-            <h3 class="item__title"><a href="product/018.html">سوییشرت پنبه ای دورس مردانه مدل ۰۷۶۸</a></h3>
-            <p class="item__opts">رنگ: طوسی | سایز: XL</p>
-            <p class="item__price">
-              <span>۹۶۸,۰۰۰ تومان</span>
-            </p>
-          </div>
-          <input class="item__qty" type="number" value="1" min="1" max="10" aria-label="تعداد">
-          <p class="item__total">۹۶۸,۰۰۰ تومان</p>
-          <button class="item__remove" aria-label="حذف از سبد"><i class="ri-delete-bin-line"></i></button>
-        </li>
-      </ul>
+      <div class="cart-empty" data-cart-empty hidden>
+        <i class="ri-shopping-bag-3-line" aria-hidden="true"></i>
+        <h2>سبد خریدت خالیه</h2>
+        <p>هنوز محصولی به سبد خرید اضافه نکردی.</p>
+        <a href="shop.html" class="btn btn--primary">مشاهده محصولات</a>
+      </div>
 
       <aside class="summary" aria-label="خلاصه سفارش">
         <h2 class="summary__title">خلاصه سفارش</h2>
-
-        <form class="coupon">
-          <input class="coupon__input" type="text" placeholder="کد تخفیف" aria-label="کد تخفیف">
-          <button class="btn btn--dark btn--sm">ثبت</button>
+        <form class="coupon" data-coupon-form>
+          <input class="coupon__input" type="text" placeholder="" aria-label="کد تخفیف" disabled>
+          <button class="btn btn--dark btn--sm" type="button" disabled>ثبت</button>
         </form>
-
         <dl class="summary__list">
-          <div><dt>قیمت کالاها</dt><dd>۳,۵۵۸,۰۰۰ تومان</dd></div>
-          <div class="summary__discount"><dt>تخفیف</dt><dd>۴۶۹,۰۰۰ تومان</dd></div>
+          <div><dt>مبلغ محصولات</dt><dd data-cart-subtotal>۰ تومان</dd></div>
+          <div class="summary__discount" data-cart-discount-row hidden><dt>تخفیف محصولات</dt><dd data-cart-discount>۰ تومان</dd></div>
           <div><dt>هزینه ارسال</dt><dd>رایگان</dd></div>
-          <div class="summary__total"><dt>مبلغ قابل پرداخت</dt><dd>۳,۰۸۹,۰۰۰ تومان</dd></div>
+          <div class="summary__total"><dt>مبلغ قابل پرداخت</dt><dd data-cart-total>۰ تومان</dd></div>
         </dl>
-
-        <a href="order-success.html" class="btn btn--primary summary__pay">ثبت سفارش</a>
+        <a href="login.html" class="btn btn--primary summary__pay" data-cart-checkout aria-disabled="true">ادامه فرایند خرید</a>
         <a href="shop.html" class="summary__back">بازگشت به فروشگاه</a>
       </aside>
     </div>
@@ -192,5 +155,9 @@
     <p class="footer__copy">کلیه حقوق محفوظ و مربوط به آینیم می باشد</p>
   </footer>
 
+  <script src="../js/products-data.js"></script>
+  <script src="../js/ui.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/cart-page.js"></script>
 </body>
 </html>

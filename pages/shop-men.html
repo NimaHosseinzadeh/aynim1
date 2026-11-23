@@ -14,8 +14,10 @@
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/inner.css">
     <link rel="stylesheet" href="../css/shop.css">
+    <link rel="stylesheet" href="../css/animations.css">
 </head>
 <body>
+  <div class="page-loader" aria-hidden="true"><span class="page-loader__mark">AYNIM</span><span class="page-loader__spinner"></span></div>
 
   <!-- Header -->
   <header class="header">
@@ -32,7 +34,7 @@
           <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.800-8 11-8 11z"/></svg>
         </a>
         <a href="login.html" class="btn btn--primary btn--sm"><img src="../assets/icons/account.svg" alt="">ورود / ثبت نام</a>
-        <a href="cart.html" class="cart" aria-label="سبد خرید"><img src="../assets/icons/shopping-bag.svg" alt=""><span class="cart__count">۱</span></a>
+        <a href="cart.html" class="cart" aria-label="سبد خرید"><img src="../assets/icons/shopping-bag.svg" alt=""><span class="cart__count">۰</span></a>
       </div>
     </div>
 
@@ -128,39 +130,39 @@
         </div>
 
         <div class="products">
-          <a href="product/014.html" class="card">
+          <a href="product/index.html?id=014" class="card">
             <span class="card__badge">جدید</span>
             <img class="card__img" src="../assets/images/014.jpg" alt="">
             <h3 class="card__title">تی شرت دو رو چاپ مردانه مدل ۰۳۷</h3>
             <p class="card__price">۸۶۸,۰۰۰ تومان</p>
           </a>
-          <a href="product/012.html" class="card">
+          <a href="product/index.html?id=012" class="card">
             <span class="card__badge">جدید</span>
             <img class="card__img" src="../assets/images/012.jpg" alt="">
             <h3 class="card__title">تی شرت آستین کوتاه یقه گرد مردانه مدل ۰۳۹</h3>
             <p class="card__price">۸۸۷,۰۰۰ تومان</p>
           </a>
-          <a href="product/011.html" class="card">
+          <a href="product/index.html?id=011" class="card">
             <span class="card__badge">جدید</span>
             <img class="card__img" src="../assets/images/011.jpg" alt="">
             <h3 class="card__title">ست تیشرت و شلوارک مردانه هایکا مدل ۰۸۴۶</h3>
             <del class="card__old">۱,۱۵۰,۰۰۰</del>
             <p class="card__price">۹۲۷,۰۰۰ تومان</p>
           </a>
-          <a href="product/018.html" class="card">
+          <a href="product/index.html?id=018" class="card">
             <span class="card__badge">تخفیف</span>
             <img class="card__img" src="../assets/images/018.jpg" alt="">
             <h3 class="card__title">سوییشرت پنبه ای دورس مردانه مدل ۰۷۶۸</h3>
             <p class="card__price">۹۶۸,۰۰۰ تومان</p>
             <div class="colors"><i style="background:#b0323c"></i><i style="background:#eee"></i><i style="background:#5cb88a"></i></div>
           </a>
-          <a href="product/ma1.html" class="card">
+          <a href="product/index.html?id=ma1" class="card">
             <span class="card__badge">جدید</span>
             <img class="card__img" src="../assets/images/ma1.jpg" alt="">
             <h3 class="card__title">لباس مردانه مدل ۶۰۱</h3>
             <p class="card__price">۷۴۰,۰۰۰ تومان</p>
           </a>
-          <a href="product/ma2.html" class="card">
+          <a href="product/index.html?id=ma2" class="card">
             <span class="card__badge">تخفیف</span>
             <img class="card__img" src="../assets/images/ma2.jpg" alt="">
             <h3 class="card__title">لباس مردانه مدل ۶۰۲</h3>
@@ -168,19 +170,19 @@
             <p class="card__price">۸۸۰,۰۰۰ تومان</p>
             <div class="colors"><i style="background:#e8a35c"></i><i style="background:#b0323c"></i><i style="background:#eee"></i></div>
           </a>
-          <a href="product/ma3.html" class="card">
+          <a href="product/index.html?id=ma3" class="card">
             <span class="card__badge">جدید</span>
             <img class="card__img" src="../assets/images/ma3.jpg" alt="">
             <h3 class="card__title">لباس مردانه مدل ۶۰۳</h3>
             <p class="card__price">۹۶۰,۰۰۰ تومان</p>
           </a>
-          <a href="product/ma4.html" class="card">
+          <a href="product/index.html?id=ma4" class="card">
             <span class="card__badge">جدید</span>
             <img class="card__img" src="../assets/images/ma4.jpg" alt="">
             <h3 class="card__title">لباس مردانه مدل ۶۰۴</h3>
             <p class="card__price">۱,۰۴۰,۰۰۰ تومان</p>
           </a>
-          <a href="product/ma5.html" class="card">
+          <a href="product/index.html?id=ma5" class="card">
             <span class="card__badge">جدید</span>
             <img class="card__img" src="../assets/images/ma5.jpg" alt="">
             <h3 class="card__title">لباس مردانه مدل ۶۰۵</h3>
@@ -310,5 +312,9 @@
     <p class="footer__copy">کلیه حقوق محفوظ و مربوط به آینیم می باشد</p>
   </footer>
 
+  <script src="../js/ui.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/products-data.js"></script>
+  <script src="../js/wishlist.js"></script>
 </body>
 </html>

@@ -321,3 +321,26 @@
     gap: 0.6rem;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Dynamic product template
+   -------------------------------------------------------------------------- */
+.product__selection {
+  margin-top: .55rem;
+  color: var(--muted);
+  font-size: .78rem;
+}
+
+.product-not-found {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.product-not-found h1 {
+  margin-bottom: .5rem;
+}
+
+.product-not-found p {
+  margin-bottom: 1rem;
+  color: var(--muted);
+}

@@ -14,8 +14,10 @@
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/inner.css">
     <link rel="stylesheet" href="../css/faq.css">
+    <link rel="stylesheet" href="../css/animations.css">
 </head>
 <body>
+  <div class="page-loader" aria-hidden="true"><span class="page-loader__mark">AYNIM</span><span class="page-loader__spinner"></span></div>
 
   <!-- Header -->
   <header class="header">
@@ -32,7 +34,7 @@
           <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.800-8 11-8 11z"/></svg>
         </a>
         <a href="login.html" class="btn btn--primary btn--sm"><img src="../assets/icons/account.svg" alt="">ورود / ثبت نام</a>
-        <a href="cart.html" class="cart" aria-label="سبد خرید"><img src="../assets/icons/shopping-bag.svg" alt=""><span class="cart__count">۱</span></a>
+        <a href="cart.html" class="cart" aria-label="سبد خرید"><img src="../assets/icons/shopping-bag.svg" alt=""><span class="cart__count">۰</span></a>
       </div>
     </div>
 
@@ -248,5 +250,7 @@
     <p class="footer__copy">کلیه حقوق محفوظ و مربوط به آینیم می باشد</p>
   </footer>
 
+  <script src="../js/ui.js"></script>
+  <script src="../js/cart.js"></script>
 </body>
 </html>

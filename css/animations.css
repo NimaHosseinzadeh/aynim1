@@ -1,0 +1,91 @@
+/* ========================================================================== */
+/* Aynim - lightweight loading and interaction animations                     */
+/* ========================================================================== */
+.page-loader {
+  display: none;
+}
+
+html.has-js .page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: #fff;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .35s ease, visibility .35s ease;
+}
+
+.page-loader__mark {
+  color: var(--primary, #6b4eff);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: .18em;
+}
+
+.page-loader__spinner {
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid #e9e5f7;
+  border-top-color: var(--primary, #6b4eff);
+  border-radius: 50%;
+  animation: aynim-spin .75s linear infinite;
+}
+
+.page-loader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+body.is-ready main {
+  animation: aynim-page-enter .35s ease both;
+}
+
+.site-toast {
+  position: fixed;
+  z-index: 10000;
+  inset-inline-start: 1rem;
+  bottom: 1rem;
+  max-width: min(24rem, calc(100% - 2rem));
+  padding: .85rem 1.1rem;
+  color: #fff;
+  background: #25212d;
+  border-radius: .75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .16);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .22s ease, transform .22s ease;
+}
+
+.site-toast.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.site-toast--error {
+  background: #9f263d;
+}
+
+@keyframes aynim-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes aynim-page-enter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-loader,
+  .site-toast,
+  body.is-ready main {
+    animation: none !important;
+    transition: none !important;
+  }
+  .page-loader__spinner { animation: none !important; }
+}

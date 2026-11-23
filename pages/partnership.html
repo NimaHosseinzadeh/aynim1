@@ -15,8 +15,22 @@
     <link rel="stylesheet" href="../css/inner.css">
     <link rel="stylesheet" href="../css/auth.css">
     <link rel="stylesheet" href="../css/info.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <style>
+      .form-card select.field__input {
+        appearance: none;
+        -webkit-appearance: none;
+        padding-right: 2.8rem;
+        padding-left: 0.9rem;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.9rem center;
+        background-size: 1rem;
+      }
+    </style>
 </head>
 <body>
+  <div class="page-loader" aria-hidden="true"><span class="page-loader__mark">AYNIM</span><span class="page-loader__spinner"></span></div>
 
   <!-- Header -->
   <header class="header">
@@ -33,7 +47,7 @@
           <svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.800-8 11-8 11z"/></svg>
         </a>
         <a href="login.html" class="btn btn--primary btn--sm"><img src="../assets/icons/account.svg" alt="">ورود / ثبت نام</a>
-        <a href="cart.html" class="cart" aria-label="سبد خرید"><img src="../assets/icons/shopping-bag.svg" alt=""><span class="cart__count">۱</span></a>
+        <a href="cart.html" class="cart" aria-label="سبد خرید"><img src="../assets/icons/shopping-bag.svg" alt=""><span class="cart__count">۰</span></a>
       </div>
     </div>
 
@@ -202,5 +216,7 @@
     <p class="footer__copy">کلیه حقوق محفوظ و مربوط به آینیم می باشد</p>
   </footer>
 
+  <script src="../js/ui.js"></script>
+  <script src="../js/cart.js"></script>
 </body>
 </html>

@@ -225,3 +225,53 @@
 .summary__list div[hidden] {
   display: none;
 }
+
+
+/* --------------------------------------------------------------------------
+   Dynamic cart states
+   -------------------------------------------------------------------------- */
+.cart-page.is-empty {
+  display: block;
+}
+
+.cart-empty {
+  display: grid;
+  justify-items: center;
+  gap: .65rem;
+  padding: 3rem 1rem;
+  text-align: center;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+}
+
+.cart-empty[hidden] {
+  display: none;
+}
+
+.cart-empty > i {
+  font-size: 3rem;
+  color: var(--primary);
+}
+
+.cart-empty h2 {
+  font-size: 1.15rem;
+}
+
+.cart-empty p {
+  color: var(--muted);
+}
+
+.summary__pay.is-disabled {
+  opacity: .5;
+  pointer-events: auto;
+  cursor: not-allowed;
+}
+
+.item__qty {
+  max-width: 100%;
+}
+
+.cart-page.is-empty .items,
+.cart-page.is-empty .summary {
+  display: none;
+}
